@@ -10,6 +10,7 @@
   <meta property="og:type" content="website"/>
   <link rel="canonical" href="https://vexis.com.br/"/>
   <title>VEXIS — Unissex & Essential</title>
+  <link rel="icon" type="image/png" href="/public/icons/favicon.png"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -47,7 +48,7 @@
 
     /* HERO */
     .hero{height:100vh;position:relative;overflow:hidden;display:flex;align-items:flex-end}
-    .hero-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1800&auto=format&fit=crop&q=80') center/cover no-repeat}
+    .hero-img{position:absolute;inset:0;background:url('/public/images/hero-bg.png') center/cover no-repeat}
     .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,26,24,.82) 0%,rgba(26,26,24,.25) 55%,transparent 100%)}
     .hero-content{position:relative;z-index:2;padding:0 7% 6rem;max-width:680px}
     .hero-tag{display:inline-block;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);border-bottom:1px solid var(--gold);padding-bottom:.3rem;margin-bottom:1.2rem}
@@ -264,8 +265,7 @@
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-logo">
-    <!-- Substituir por: <img src="/public/images/logo.png" alt="VEXIS" style="height:38px"> quando a logo estiver disponível -->
-    <span class="nav-logo-svg">VEXIS</span>
+    <img src="/public/images/logo.svg" alt="VEXIS" style="height:38px"/>
   </div>
   <div class="nav-links">
     <a href="#inicio">Início</a>
@@ -313,19 +313,18 @@
   <div class="galeria">
     <div class="img-main">
       <img id="fotoMain"
-        src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop&q=80"
+        src="/public/images/product-branco-preto.png"
         alt="Camiseta VEXIS — Branco/Preto"/>
-      <!-- Trocar src por: /public/images/product-branco-preto.png quando disponível -->
     </div>
     <div class="thumbs">
-      <div class="thumb ativo" onclick="trocarFoto('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop','Branco & Preto',this)">
-        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&auto=format&fit=crop" alt="Branco & Preto"/>
+      <div class="thumb ativo" onclick="trocarFoto('/public/images/product-branco-preto.png','Branco & Preto',this)">
+        <img src="/public/images/product-branco-preto.png" alt="Branco & Preto"/>
       </div>
-      <div class="thumb" onclick="trocarFoto('https://images.unsplash.com/photo-1618354691792-d1d42acfd860?w=800&auto=format&fit=crop','Cinza Concreto',this)">
-        <img src="https://images.unsplash.com/photo-1618354691792-d1d42acfd860?w=300&auto=format&fit=crop" alt="Cinza Concreto"/>
+      <div class="thumb" onclick="trocarFoto('/public/images/product-cinza.png','Cinza Concreto',this)">
+        <img src="/public/images/product-cinza.png" alt="Cinza Concreto"/>
       </div>
-      <div class="thumb" onclick="trocarFoto('https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop','Off-White',this)">
-        <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=300&auto=format&fit=crop" alt="Off-White"/>
+      <div class="thumb" onclick="trocarFoto('/public/images/product-offwhite.png','Off-White',this)">
+        <img src="/public/images/product-offwhite.png" alt="Off-White"/>
       </div>
     </div>
   </div>
@@ -340,15 +339,15 @@
     </div>
     <div class="label-opt">Cor: <strong id="corLabel">Branco & Preto</strong></div>
     <div class="cores-wrap">
-      <div class="cor-item ativo" onclick="trocarCor('Branco & Preto',this,'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&auto=format&fit=crop')">
+      <div class="cor-item ativo" onclick="trocarCor('Branco & Preto',this,'/public/images/product-branco-preto.png')">
         <div class="cor-circle" style="background:linear-gradient(135deg,#f5f5f0 50%,#1a1a18 50%)"></div>
         <span class="cor-name">Branco/Preto</span>
       </div>
-      <div class="cor-item" onclick="trocarCor('Cinza Concreto',this,'https://images.unsplash.com/photo-1618354691792-d1d42acfd860?w=800&auto=format&fit=crop')">
+      <div class="cor-item" onclick="trocarCor('Cinza Concreto',this,'/public/images/product-cinza.png')">
         <div class="cor-circle" style="background:#8a8880"></div>
         <span class="cor-name">Cinza</span>
       </div>
-      <div class="cor-item" onclick="trocarCor('Off-White',this,'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&auto=format&fit=crop')">
+      <div class="cor-item" onclick="trocarCor('Off-White',this,'/public/images/product-offwhite.png')">
         <div class="cor-circle" style="background:#e8e2d8"></div>
         <span class="cor-name">Off-White</span>
       </div>
@@ -373,9 +372,9 @@
 
 <!-- BANNER 3 FOTOS -->
 <div class="banner-fotos">
-  <div class="banner-foto"><img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=600&auto=format&fit=crop&q=80" alt="VEXIS"/></div>
-  <div class="banner-foto"><img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&auto=format&fit=crop&q=80" alt="VEXIS"/></div>
-  <div class="banner-foto"><img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&auto=format&fit=crop&q=80" alt="VEXIS"/></div>
+  <div class="banner-foto"><img src="/public/images/banner-1.png" alt="VEXIS"/></div>
+  <div class="banner-foto"><img src="/public/images/banner-2.png" alt="VEXIS"/></div>
+  <div class="banner-foto"><img src="/public/images/banner-3.png" alt="VEXIS"/></div>
 </div>
 
 <!-- SECTION DRY-FIT -->
@@ -398,7 +397,7 @@
       <button class="btn-dry">Ver Linha Dry-Fit</button>
     </div>
     <div class="dryfits-img">
-      <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=700&auto=format&fit=crop&q=80" alt="Dry-Fit VEXIS"/>
+      <img src="/public/images/dryfits.png" alt="Dry-Fit VEXIS"/>
     </div>
   </div>
 </section>
@@ -406,7 +405,7 @@
 <!-- BANNER DOBRADAS -->
 <div class="banner-dobradas" id="sobre">
   <div class="dobradas-img">
-    <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=700&auto=format&fit=crop&q=80" alt="Qualidade VEXIS"/>
+    <img src="/public/images/qualidade.png" alt="Qualidade VEXIS"/>
   </div>
   <div class="dobradas-texto">
     <div class="kicker">Nossa Essência</div>
@@ -419,7 +418,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <span class="footer-logo-txt">VEXIS</span>
+    <img src="/public/images/logo.svg" alt="VEXIS" style="height:36px"/>
     <div class="footer-links">
       <div class="footer-col">
         <h4>Produtos</h4>
