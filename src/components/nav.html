@@ -1,0 +1,26 @@
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <img src="/public/images/logo.png" alt="VEXIS"/>
+  </div>
+  <div class="nav-links">
+    <a href="#">Início</a>
+    <a href="#">Camisetas</a>
+    <a href="#">Dry-Fit</a>
+    <a href="#">Sobre</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-cart" onclick="abrirCarrinho()" title="Carrinho">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+    <button class="btn-nav" onclick="comprar()">Comprar</button>
+    <button class="ham-btn" id="hamBtn" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>

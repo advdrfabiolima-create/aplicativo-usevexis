@@ -1,0 +1,76 @@
+<!-- SECAO TITULO -->
+<div class="secao-header">
+  <div class="secao-kicker">Produto Destaque</div>
+  <h2 class="secao-titulo">Camiseta Essential</h2>
+  <p class="secao-sub">Um único modelo, três cores icônicas. Feita para quem não abre mão de qualidade.</p>
+</div>
+
+<!-- PRODUTO PRINCIPAL -->
+<div class="produto-wrap">
+
+  <!-- GALERIA -->
+  <div class="galeria">
+    <div class="img-main">
+      <img id="fotoMain"
+        src="/public/images/product-branco-preto.png"
+        alt="Camiseta VEXIS — Branco/Preto"/>
+    </div>
+    <div class="thumbs">
+      <div class="thumb ativo" onclick="trocarFoto('/public/images/product-branco-preto.png', 'Branco & Preto', this)">
+        <img src="/public/images/product-branco-preto.png" alt=""/>
+      </div>
+      <div class="thumb" onclick="trocarFoto('/public/images/product-cinza.png', 'Cinza Concreto', this)">
+        <img src="/public/images/product-cinza.png" alt="Cinza Concreto"/>
+      </div>
+      <div class="thumb" onclick="trocarFoto('/public/images/product-offwhite.png', 'Off-White', this)">
+        <img src="/public/images/product-offwhite.png" alt="Off-White"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="info-produto">
+    <div class="marca-tag">VEXIS — Unissex & Essential</div>
+    <h2 class="nome-prod">Camiseta<br>Essential</h2>
+    <p class="sub-prod">100% algodão penteado fio 30.1 · Caimento unissex<br>Gola careca · Costuras reforçadas</p>
+
+    <div class="preco-bloco">
+      <div class="preco-val">R$ 79,90</div>
+      <div class="preco-parc">ou 3× de R$ 26,63 sem juros</div>
+    </div>
+
+    <div class="label-opt">Cor: <strong id="corLabel">Branco & Preto</strong></div>
+    <div class="cores-wrap">
+      <div class="cor-item ativo" onclick="trocarCor('Branco & Preto', this, '/public/images/product-branco-preto.png')">
+        <div class="cor-circle" style="background: linear-gradient(135deg,#f5f5f0 50%,#1a1a18 50%)"></div>
+        <span class="cor-name">Branco/Preto</span>
+      </div>
+      <div class="cor-item" onclick="trocarCor('Cinza Concreto', this, '/public/images/product-cinza.png')">
+        <div class="cor-circle" style="background: #8a8880"></div>
+        <span class="cor-name">Cinza</span>
+      </div>
+      <div class="cor-item" onclick="trocarCor('Off-White', this, '/public/images/product-offwhite.png')">
+        <div class="cor-circle" style="background: #e8e2d8"></div>
+        <span class="cor-name">Off-White</span>
+      </div>
+    </div>
+
+    <div class="label-opt">Tamanho: <strong id="tamLabel">—</strong></div>
+    <div class="tams-wrap">
+      <button class="tam" onclick="escolherTam('P',this)">P</button>
+      <button class="tam" onclick="escolherTam('M',this)">M</button>
+      <button class="tam" onclick="escolherTam('G',this)">G</button>
+      <button class="tam" onclick="escolherTam('GG',this)">GG</button>
+      <button class="tam esgotado" disabled>XGG</button>
+    </div>
+
+    <button class="btn-comprar" onclick="comprar()">Comprar Agora</button>
+    <button class="btn-carrinho" onclick="adicionarCarrinho()">+ Adicionar ao Carrinho</button>
+
+    <div class="selos">
+      <div class="selo">✦ Frete grátis acima de R$199</div>
+      <div class="selo">✦ Troca em 30 dias</div>
+      <div class="selo">✦ Entrega Brasil</div>
+    </div>
+  </div>
+</div>

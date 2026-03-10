@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="VEXIS — Roupas unissex essenciais. Camisetas premium de algodão e linha Dry-Fit. Qualidade, estilo e identidade em cada peça."/>
+  <meta name="theme-color" content="#f4f2ef"/>
+  <meta property="og:title" content="VEXIS — Unissex & Essential"/>
+  <meta property="og:description" content="Camisetas unissex premium. Algodão 30.1, caimento perfeito, três cores icônicas."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://vexis.com.br/"/>
+  <title>VEXIS — Unissex & Essential</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/svg+xml" href="/public/icons/favicon.svg"/>
+  <link rel="stylesheet" href="src/css/main.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <img src="/public/images/logo.png" alt="VEXIS"/>
+  </div>
+  <div class="nav-links">
+    <a href="#">Início</a>
+    <a href="#">Camisetas</a>
+    <a href="#">Dry-Fit</a>
+    <a href="#">Sobre</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-cart" onclick="abrirCarrinho()" title="Carrinho">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+    <button class="btn-nav" onclick="comprar()">Comprar</button>
+    <button class="ham-btn" id="hamBtn" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag anim">Coleção Essentials 2025</div>
+    <h1 class="anim anim-2">Simplesmente<br><em>essencial.</em></h1>
+    <p class="anim anim-3">Peças unissex pensadas para durar. Algodão premium, caimento perfeito e identidade em cada detalhe.</p>
+    <button class="btn-hero anim anim-4">Ver Coleção</button>
+  </div>
+</section>
+
+<!-- SECAO TITULO -->
+<div class="secao-header">
+  <div class="secao-kicker">Produto Destaque</div>
+  <h2 class="secao-titulo">Camiseta Essential</h2>
+  <p class="secao-sub">Um único modelo, três cores icônicas. Feita para quem não abre mão de qualidade.</p>
+</div>
+
+<!-- PRODUTO PRINCIPAL -->
+<div class="produto-wrap">
+
+  <!-- GALERIA -->
+  <div class="galeria">
+    <div class="img-main">
+      <img id="fotoMain"
+        src="/public/images/product-branco-preto.png"
+        alt="Camiseta VEXIS — Branco/Preto"/>
+    </div>
+    <div class="thumbs">
+      <div class="thumb ativo" onclick="trocarFoto('/public/images/product-branco-preto.png', 'Branco & Preto', this)">
+        <img src="/public/images/product-branco-preto.png" alt=""/>
+      </div>
+      <div class="thumb" onclick="trocarFoto('/public/images/product-cinza.png', 'Cinza Concreto', this)">
+        <img src="/public/images/product-cinza.png" alt="Cinza Concreto"/>
+      </div>
+      <div class="thumb" onclick="trocarFoto('/public/images/product-offwhite.png', 'Off-White', this)">
+        <img src="/public/images/product-offwhite.png" alt="Off-White"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="info-produto">
+    <div class="marca-tag">VEXIS — Unissex & Essential</div>
+    <h2 class="nome-prod">Camiseta<br>Essential</h2>
+    <p class="sub-prod">100% algodão penteado fio 30.1 · Caimento unissex<br>Gola careca · Costuras reforçadas</p>
+
+    <div class="preco-bloco">
+      <div class="preco-val">R$ 79,90</div>
+      <div class="preco-parc">ou 3× de R$ 26,63 sem juros</div>
+    </div>
+
+    <div class="label-opt">Cor: <strong id="corLabel">Branco & Preto</strong></div>
+    <div class="cores-wrap">
+      <div class="cor-item ativo" onclick="trocarCor('Branco & Preto', this, '/public/images/product-branco-preto.png')">
+        <div class="cor-circle" style="background: linear-gradient(135deg,#f5f5f0 50%,#1a1a18 50%)"></div>
+        <span class="cor-name">Branco/Preto</span>
+      </div>
+      <div class="cor-item" onclick="trocarCor('Cinza Concreto', this, '/public/images/product-cinza.png')">
+        <div class="cor-circle" style="background: #8a8880"></div>
+        <span class="cor-name">Cinza</span>
+      </div>
+      <div class="cor-item" onclick="trocarCor('Off-White', this, '/public/images/product-offwhite.png')">
+        <div class="cor-circle" style="background: #e8e2d8"></div>
+        <span class="cor-name">Off-White</span>
+      </div>
+    </div>
+
+    <div class="label-opt">Tamanho: <strong id="tamLabel">—</strong></div>
+    <div class="tams-wrap">
+      <button class="tam" onclick="escolherTam('P',this)">P</button>
+      <button class="tam" onclick="escolherTam('M',this)">M</button>
+      <button class="tam" onclick="escolherTam('G',this)">G</button>
+      <button class="tam" onclick="escolherTam('GG',this)">GG</button>
+      <button class="tam esgotado" disabled>XGG</button>
+    </div>
+
+    <button class="btn-comprar" onclick="comprar()">Comprar Agora</button>
+    <button class="btn-carrinho" onclick="adicionarCarrinho()">+ Adicionar ao Carrinho</button>
+
+    <div class="selos">
+      <div class="selo">✦ Frete grátis acima de R$199</div>
+      <div class="selo">✦ Troca em 30 dias</div>
+      <div class="selo">✦ Entrega Brasil</div>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER 3 FOTOS -->
+<div class="banner-fotos">
+  <div class="banner-foto">
+    <img src="/public/images/banner-1.png" alt="Camiseta VEXIS"/>
+  </div>
+  <div class="banner-foto">
+    <img src="/public/images/banner-2.png" alt="Camiseta VEXIS"/>
+  </div>
+  <div class="banner-foto">
+    <img src="/public/images/banner-3.png" alt="Camiseta VEXIS"/>
+  </div>
+</div>
+
+<!-- SECTION DRY-FIT -->
+<section class="dryfits-section">
+  <div class="dryfits-inner">
+    <div class="dryfits-texto">
+      <div class="kicker">Linha Performance</div>
+      <h2>Dry-Fit<br><em>para todos os ritmos.</em></h2>
+      <p>Tecido tecnológico de secagem ultra-rápida. Disponível em 8 cores vibrantes para treino, corrida ou uso casual de alta performance.</p>
+      <div class="cores-dryfits">
+        <div class="cor-tag" style="background:#ffffff" title="Branco"></div>
+        <div class="cor-tag" style="background:#e8141c" title="Vermelho"></div>
+        <div class="cor-tag" style="background:#f47920" title="Laranja"></div>
+        <div class="cor-tag" style="background:#f5e626" title="Amarelo"></div>
+        <div class="cor-tag" style="background:#8fc640" title="Verde Limão"></div>
+        <div class="cor-tag" style="background:#7bbce8" title="Azul Claro"></div>
+        <div class="cor-tag" style="background:#1c4e9d" title="Azul Royal"></div>
+        <div class="cor-tag" style="background:#1a1a18" title="Preto"></div>
+      </div>
+      <button class="btn-dry">Ver Linha Dry-Fit</button>
+    </div>
+    <div class="dryfits-img">
+      <img src="/public/images/dryfits.png" alt="Camisetas Dry-Fit VEXIS"/>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER DOBRADAS -->
+<div class="banner-dobradas">
+  <div class="dobradas-img">
+    <img src="/public/images/qualidade.png" alt="Camisetas VEXIS dobradas"/>
+  </div>
+  <div class="dobradas-texto">
+    <div class="kicker">Nossa Essência</div>
+    <h2>Qualidade que<br>você vê e sente.</h2>
+    <p>Cada peça VEXIS é desenvolvida com atenção obsessiva ao detalhe — do tecido à etiqueta. Porque acreditamos que o básico pode ser extraordinário.</p>
+    <button class="btn-comprar" style="max-width:260px">Ver Coleção Completa</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <img class="flogo" src="/public/images/logo.png" alt="VEXIS"/>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Produtos</h4>
+        <a href="#">Camisetas Essential</a>
+        <a href="#">Linha Dry-Fit</a>
+        <a href="#">Novidades</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ajuda</h4>
+        <a href="#">Guia de Tamanhos</a>
+        <a href="#">Trocas & Devoluções</a>
+        <a href="#">Rastreio</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="mailto:contato@vexis.com.br">contato@vexis.com.br</a>
+        <a href="https://instagram.com/vexisbrand" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 VEXIS — Unissex & Essential</span>
+    <span>Todos os direitos reservados</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wpp-float" href="https://wa.me/5500000000000" target="_blank" rel="noopener" title="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.004 0C7.164 0 0 7.163 0 16c0 2.822.736 5.471 2.02 7.773L0 32l8.468-2.22A15.93 15.93 0 0016.004 32C24.837 32 32 24.837 32 16S24.837 0 16.004 0zm0 29.333a13.25 13.25 0 01-6.773-1.853l-.486-.29-5.028 1.319 1.34-4.894-.317-.502A13.268 13.268 0 012.667 16c0-7.35 5.987-13.333 13.337-13.333C23.347 2.667 29.333 8.65 29.333 16S23.354 29.333 16.004 29.333zm7.315-9.982c-.4-.2-2.37-1.168-2.737-1.302-.367-.133-.634-.2-.9.2-.267.4-1.034 1.302-1.267 1.569-.234.267-.467.3-.867.1-.4-.2-1.688-.622-3.216-1.984-1.188-1.06-1.99-2.37-2.222-2.77-.234-.4-.025-.616.175-.815.18-.179.4-.467.6-.7.2-.233.267-.4.4-.667.133-.266.067-.5-.033-.7-.1-.2-.9-2.17-1.234-2.97-.325-.78-.655-.674-.9-.686l-.767-.013c-.267 0-.7.1-1.067.5s-1.4 1.368-1.4 3.337 1.433 3.871 1.633 4.137c.2.267 2.82 4.305 6.832 6.035.955.413 1.7.66 2.281.845.958.305 1.831.262 2.52.159.769-.114 2.37-.97 2.704-1.905.333-.934.333-1.735.233-1.902-.1-.166-.367-.266-.767-.466z"/>
+  </svg>
+</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cartOverlay" onclick="fecharCarrinho()"></div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3>Carrinho</h3>
+    <button class="btn-fechar-cart" onclick="fecharCarrinho()">&#10005;</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-vazio" id="cartVazio">
+      Seu carrinho está vazio.<br>Adicione produtos para continuar.
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-total">
+      <span>Total</span>
+      <span class="cart-total-val" id="cartTotal">R$ 0,00</span>
+    </div>
+    <button class="btn-checkout" onclick="finalizarCompra()">Finalizar Pedido</button>
+  </div>
+</div>
+
+<script src="src/js/main.js"></script>
+</body>
+</html>
