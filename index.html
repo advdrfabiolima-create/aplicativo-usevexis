@@ -141,20 +141,10 @@
 
   <div class="polo-grid">
 
-    <!-- Card 1: Polo Classic -->
+    <!-- Card 1: Polo Classic — inicia Preto -->
     <div class="polo-card anim">
       <div class="polo-visual" id="polo-1">
-        <div class="polo-shirt-inner">
-          <svg class="polo-svg" viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg">
-            <path class="shirt-body" style="fill:#1a1a18" d="M82,44 Q76,20 100,18 Q124,20 118,44 L162,60 L196,76 L194,114 L162,120 L162,226 L38,226 L38,120 L6,114 L4,76 L38,60 Z"/>
-            <path class="shirt-collar" d="M82,44 Q76,20 100,18 L100,44 Q90,49 82,55 Z"/>
-            <path class="shirt-collar" d="M118,44 Q124,20 100,18 L100,44 Q110,49 118,55 Z"/>
-            <rect class="shirt-placket" x="96" y="44" width="8" height="48" rx="2"/>
-            <circle class="shirt-button" cx="100" cy="57" r="4.5"/>
-            <circle class="shirt-button" cx="100" cy="71" r="4.5"/>
-            <circle class="shirt-button" cx="100" cy="85" r="4.5"/>
-          </svg>
-        </div>
+        <img class="polo-img" src="/public/images/polo-preta.png" alt="Polo Classic — Preto"/>
       </div>
       <div class="polo-card-info">
         <div class="polo-marca">VEXIS — Polo Collection</div>
@@ -166,10 +156,10 @@
         </div>
         <div class="polo-label-cor">Cor: <strong class="polo-cor-ativa">Preto</strong></div>
         <div class="polo-swatches">
-          <button class="polo-swatch ativo" title="Preto"   onclick="trocarCorPolo('polo-1','#1a1a18','Preto',this)"   style="background:#1a1a18"></button>
-          <button class="polo-swatch"        title="Branco"  onclick="trocarCorPolo('polo-1','#f0ede8','Branco',this)"  style="background:#f0ede8;border-color:#dedad4"></button>
-          <button class="polo-swatch"        title="Marinho" onclick="trocarCorPolo('polo-1','#1c2e5e','Marinho',this)" style="background:#1c2e5e"></button>
-          <button class="polo-swatch"        title="Bordô"   onclick="trocarCorPolo('polo-1','#6d2237','Bordô',this)"   style="background:#6d2237"></button>
+          <button class="polo-swatch ativo" title="Preto"        onclick="trocarCorPolo('polo-1','/public/images/polo-preta.png','Preto',this)"              style="background:#1a1a18"></button>
+          <button class="polo-swatch"        title="Branco"       onclick="trocarCorPolo('polo-1','/public/images/polo-branca.png','Branco',this)"            style="background:#f5f3f0;border-color:#dedad4"></button>
+          <button class="polo-swatch"        title="Azul Marinho" onclick="trocarCorPolo('polo-1','/public/images/polo-azul-marinho.png','Azul Marinho',this)" style="background:#1c2e5e"></button>
+          <button class="polo-swatch"        title="Verde Musgo"  onclick="trocarCorPolo('polo-1','/public/images/polo-verde-musgo.png','Verde Musgo',this)"   style="background:#4a6742"></button>
         </div>
         <div class="polo-tams">
           <button class="polo-tam" onclick="escolherTamPolo(this)">P</button>
@@ -181,20 +171,10 @@
       </div>
     </div>
 
-    <!-- Card 2: Polo Pima -->
+    <!-- Card 2: Polo Pima — inicia Branco -->
     <div class="polo-card anim anim-2">
       <div class="polo-visual" id="polo-2">
-        <div class="polo-shirt-inner">
-          <svg class="polo-svg" viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg">
-            <path class="shirt-body" style="fill:#c9b99a" d="M82,44 Q76,20 100,18 Q124,20 118,44 L162,60 L196,76 L194,114 L162,120 L162,226 L38,226 L38,120 L6,114 L4,76 L38,60 Z"/>
-            <path class="shirt-collar" d="M82,44 Q76,20 100,18 L100,44 Q90,49 82,55 Z"/>
-            <path class="shirt-collar" d="M118,44 Q124,20 100,18 L100,44 Q110,49 118,55 Z"/>
-            <rect class="shirt-placket" style="fill:rgba(0,0,0,0.08)" x="96" y="44" width="8" height="48" rx="2"/>
-            <circle class="shirt-button" style="fill:rgba(0,0,0,0.28)" cx="100" cy="57" r="4.5"/>
-            <circle class="shirt-button" style="fill:rgba(0,0,0,0.28)" cx="100" cy="71" r="4.5"/>
-            <circle class="shirt-button" style="fill:rgba(0,0,0,0.28)" cx="100" cy="85" r="4.5"/>
-          </svg>
-        </div>
+        <img class="polo-img" src="/public/images/polo-branca.png" alt="Polo Pima — Branco"/>
       </div>
       <div class="polo-card-info">
         <div class="polo-marca">VEXIS — Polo Collection</div>
@@ -204,12 +184,12 @@
           <span class="polo-preco">R$ 149,90</span>
           <span class="polo-parc">3× R$ 49,97</span>
         </div>
-        <div class="polo-label-cor">Cor: <strong class="polo-cor-ativa">Areia</strong></div>
+        <div class="polo-label-cor">Cor: <strong class="polo-cor-ativa">Branco</strong></div>
         <div class="polo-swatches">
-          <button class="polo-swatch ativo" title="Areia"      onclick="trocarCorPolo('polo-2','#c9b99a','Areia',this)"      style="background:#c9b99a"></button>
-          <button class="polo-swatch"        title="Sage"       onclick="trocarCorPolo('polo-2','#7a9e7e','Sage',this)"       style="background:#7a9e7e"></button>
-          <button class="polo-swatch"        title="Rosa Antigo" onclick="trocarCorPolo('polo-2','#c4927a','Rosa Antigo',this)" style="background:#c4927a"></button>
-          <button class="polo-swatch"        title="Grafite"    onclick="trocarCorPolo('polo-2','#4a4845','Grafite',this)"    style="background:#4a4845"></button>
+          <button class="polo-swatch ativo" title="Branco"       onclick="trocarCorPolo('polo-2','/public/images/polo-branca.png','Branco',this)"            style="background:#f5f3f0;border-color:#dedad4"></button>
+          <button class="polo-swatch"        title="Preto"        onclick="trocarCorPolo('polo-2','/public/images/polo-preta.png','Preto',this)"              style="background:#1a1a18"></button>
+          <button class="polo-swatch"        title="Azul Marinho" onclick="trocarCorPolo('polo-2','/public/images/polo-azul-marinho.png','Azul Marinho',this)" style="background:#1c2e5e"></button>
+          <button class="polo-swatch"        title="Verde Musgo"  onclick="trocarCorPolo('polo-2','/public/images/polo-verde-musgo.png','Verde Musgo',this)"   style="background:#4a6742"></button>
         </div>
         <div class="polo-tams">
           <button class="polo-tam" onclick="escolherTamPolo(this)">P</button>
@@ -221,20 +201,10 @@
       </div>
     </div>
 
-    <!-- Card 3: Polo Sport -->
+    <!-- Card 3: Polo Sport — inicia Azul Marinho -->
     <div class="polo-card anim anim-3">
       <div class="polo-visual" id="polo-3">
-        <div class="polo-shirt-inner">
-          <svg class="polo-svg" viewBox="0 0 200 230" xmlns="http://www.w3.org/2000/svg">
-            <path class="shirt-body" style="fill:#1c4e9d" d="M82,44 Q76,20 100,18 Q124,20 118,44 L162,60 L196,76 L194,114 L162,120 L162,226 L38,226 L38,120 L6,114 L4,76 L38,60 Z"/>
-            <path class="shirt-collar" d="M82,44 Q76,20 100,18 L100,44 Q90,49 82,55 Z"/>
-            <path class="shirt-collar" d="M118,44 Q124,20 100,18 L100,44 Q110,49 118,55 Z"/>
-            <rect class="shirt-placket" x="96" y="44" width="8" height="48" rx="2"/>
-            <circle class="shirt-button" cx="100" cy="57" r="4.5"/>
-            <circle class="shirt-button" cx="100" cy="71" r="4.5"/>
-            <circle class="shirt-button" cx="100" cy="85" r="4.5"/>
-          </svg>
-        </div>
+        <img class="polo-img" src="/public/images/polo-azul-marinho.png" alt="Polo Sport — Azul Marinho"/>
       </div>
       <div class="polo-card-info">
         <div class="polo-marca">VEXIS — Polo Collection</div>
@@ -244,12 +214,12 @@
           <span class="polo-preco">R$ 139,90</span>
           <span class="polo-parc">3× R$ 46,63</span>
         </div>
-        <div class="polo-label-cor">Cor: <strong class="polo-cor-ativa">Azul Royal</strong></div>
+        <div class="polo-label-cor">Cor: <strong class="polo-cor-ativa">Azul Marinho</strong></div>
         <div class="polo-swatches">
-          <button class="polo-swatch ativo" title="Azul Royal" onclick="trocarCorPolo('polo-3','#1c4e9d','Azul Royal',this)" style="background:#1c4e9d"></button>
-          <button class="polo-swatch"        title="Coral"      onclick="trocarCorPolo('polo-3','#e87058','Coral',this)"      style="background:#e87058"></button>
-          <button class="polo-swatch"        title="Oliva"      onclick="trocarCorPolo('polo-3','#6b7c4b','Oliva',this)"      style="background:#6b7c4b"></button>
-          <button class="polo-swatch"        title="Creme"      onclick="trocarCorPolo('polo-3','#e5ddd3','Creme',this)"      style="background:#e5ddd3;border-color:#dedad4"></button>
+          <button class="polo-swatch ativo" title="Azul Marinho" onclick="trocarCorPolo('polo-3','/public/images/polo-azul-marinho.png','Azul Marinho',this)" style="background:#1c2e5e"></button>
+          <button class="polo-swatch"        title="Verde Musgo"  onclick="trocarCorPolo('polo-3','/public/images/polo-verde-musgo.png','Verde Musgo',this)"   style="background:#4a6742"></button>
+          <button class="polo-swatch"        title="Preto"        onclick="trocarCorPolo('polo-3','/public/images/polo-preta.png','Preto',this)"              style="background:#1a1a18"></button>
+          <button class="polo-swatch"        title="Branco"       onclick="trocarCorPolo('polo-3','/public/images/polo-branca.png','Branco',this)"            style="background:#f5f3f0;border-color:#dedad4"></button>
         </div>
         <div class="polo-tams">
           <button class="polo-tam" onclick="escolherTamPolo(this)">P</button>

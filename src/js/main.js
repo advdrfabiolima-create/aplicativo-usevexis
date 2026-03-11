@@ -231,44 +231,23 @@ function comprar() {
 }
 
 // ── POLO COLLECTION ──
-function corEhClara(hex) {
-  const r = parseInt(hex.slice(1, 3), 16);
-  const g = parseInt(hex.slice(3, 5), 16);
-  const b = parseInt(hex.slice(5, 7), 16);
-  return (r * 299 + g * 587 + b * 114) / 1000 > 145;
-}
-
-function trocarCorPolo(cardId, cor, nome, el) {
+function trocarCorPolo(cardId, src, nome, el) {
   const visual = document.getElementById(cardId);
-  const shirt  = visual.querySelector('.polo-shirt-inner');
+  const img    = visual.querySelector('.polo-img');
   const card   = visual.closest('.polo-card');
 
   card.querySelectorAll('.polo-swatch').forEach(b => b.classList.remove('ativo'));
   el.classList.add('ativo');
   card.querySelector('.polo-cor-ativa').textContent = nome;
 
-  // Swap animation: slide out → change color → slide in
-  shirt.style.animation = 'none';
-  shirt.offsetHeight; // force reflow
-  shirt.classList.add('trocando');
-
-  // Change color at 35% of 520ms = ~182ms (when shirt is invisible)
+  img.classList.remove('entrando');
+  img.classList.add('saindo');
   setTimeout(() => {
-    const body   = visual.querySelector('.shirt-body');
-    const clara  = corEhClara(cor);
-    body.style.fill = cor;
-    visual.querySelectorAll('.shirt-button').forEach(b => {
-      b.style.fill = clara ? 'rgba(0,0,0,0.28)' : 'rgba(255,255,255,0.45)';
-    });
-    visual.querySelectorAll('.shirt-placket').forEach(b => {
-      b.style.fill = clara ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.18)';
-    });
-  }, 182);
-
-  setTimeout(() => {
-    shirt.classList.remove('trocando');
-    shirt.style.animation = '';
-  }, 540);
+    img.src = src;
+    img.classList.remove('saindo');
+    img.classList.add('entrando');
+    setTimeout(() => img.classList.remove('entrando'), 360);
+  }, 200);
 }
 
 function escolherTamPolo(el) {

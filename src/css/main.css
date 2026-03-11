@@ -95,21 +95,13 @@ nav.scrolled .ham-btn span{background:var(--dark)}
 .polo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto;padding:0 5%}
 .polo-card{background:var(--white);border-radius:8px;overflow:hidden;border:1px solid var(--border);transition:transform .3s ease,box-shadow .3s ease}
 .polo-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.1)}
-.polo-visual{background:#ece8e1;display:flex;align-items:center;justify-content:center;padding:2.5rem 1.5rem 1.5rem;overflow:hidden;height:280px}
-.polo-shirt-inner{display:flex;align-items:center;justify-content:center;width:100%;height:100%}
-.polo-svg{width:auto;height:100%;max-width:155px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.22))}
-.shirt-body{/* fill set inline — changed by JS */}
-.shirt-collar{fill:rgba(0,0,0,.15)}
-.shirt-placket{fill:rgba(255,255,255,.18)}
-.shirt-button{fill:rgba(255,255,255,.45)}
+.polo-visual{overflow:hidden;background:#f0ede8;aspect-ratio:3/4}
+.polo-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 
-@keyframes shirtSwap {
-  0%   { opacity:1; transform:translateY(0) scale(1);        animation-timing-function:ease-in }
-  35%  { opacity:0; transform:translateY(24px) scale(.91);   animation-timing-function:step-start }
-  65%  { opacity:0; transform:translateY(-20px) scale(.91);  animation-timing-function:cubic-bezier(.34,1.56,.64,1) }
-  100% { opacity:1; transform:translateY(0) scale(1) }
-}
-.polo-shirt-inner.trocando { animation:shirtSwap .52s ease forwards }
+@keyframes poloSai{from{opacity:1;transform:scale(1)}to{opacity:0;transform:scale(.97)}}
+@keyframes poloEntra{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+.polo-img.saindo{animation:poloSai .2s ease forwards}
+.polo-img.entrando{animation:poloEntra .35s ease-out forwards}
 
 .polo-card-info{padding:1.4rem 1.5rem 1.8rem}
 .polo-marca{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
