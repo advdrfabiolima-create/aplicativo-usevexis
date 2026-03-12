@@ -53,16 +53,55 @@
   <div class="hero-content">
     <div class="hero-tag anim">Coleção Essentials 2025</div>
     <h1 class="anim anim-2">Simplesmente<br><em>essencial.</em></h1>
-    <p class="anim anim-3">Peças unissex pensadas para durar. Algodão premium, caimento perfeito e identidade em cada detalhe.</p>
-    <button class="btn-hero anim anim-4" onclick="document.getElementById('produto').scrollIntoView({behavior:'smooth'})">Ver Coleção</button>
+    <p class="anim anim-3">Peças unissex pensadas para durar.<br>Algodão premium, caimento perfeito,<br>identidade em cada detalhe.</p>
+    <button class="btn-hero anim anim-4" onclick="document.getElementById('produto').scrollIntoView({behavior:'smooth'})">
+      <span>Explorar Coleção</span>
+    </button>
   </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span class="hero-scroll-text">Scroll</span>
+  </div>
+</section>
+
+<!-- ══ CATEGORIAS ══ -->
+<section class="categorias-section">
+  <a href="#produto" class="cat-card anim">
+    <div class="cat-img" style="background-image:url('/public/images/banner-1.png')"></div>
+    <div class="cat-overlay"></div>
+    <div class="cat-divider"></div>
+    <div class="cat-info">
+      <span class="cat-kicker">Essentials</span>
+      <h3 class="cat-nome">Camisetas<br>Essential</h3>
+      <span class="cat-link">Ver Coleção <span class="cat-link-arrow">→</span></span>
+    </div>
+  </a>
+  <a href="#polo" class="cat-card anim anim-2">
+    <div class="cat-img" style="background-image:url('/public/images/banner-2.png')"></div>
+    <div class="cat-overlay"></div>
+    <div class="cat-divider"></div>
+    <div class="cat-info">
+      <span class="cat-kicker">Collection</span>
+      <h3 class="cat-nome">Linha<br>Polo</h3>
+      <span class="cat-link">Ver Coleção <span class="cat-link-arrow">→</span></span>
+    </div>
+  </a>
+  <a href="#dryfits" class="cat-card anim anim-3">
+    <div class="cat-img" style="background-image:url('/public/images/corrida-dryfits.png')"></div>
+    <div class="cat-overlay"></div>
+    <div class="cat-info">
+      <span class="cat-kicker">Performance</span>
+      <h3 class="cat-nome">Dry-Fit<br>Performance</h3>
+      <span class="cat-link">Ver Coleção <span class="cat-link-arrow">→</span></span>
+    </div>
+  </a>
 </section>
 
 <!-- ══ CAMISETA ESSENTIAL ══ -->
 <div class="secao-header" id="produto">
-  <div class="secao-kicker">Produto Destaque</div>
-  <h2 class="secao-titulo">Camiseta Essential</h2>
-  <p class="secao-sub">Um único modelo, três cores icônicas. Feita para quem não abre mão de qualidade.</p>
+  <div class="secao-kicker anim">Produto Destaque</div>
+  <h2 class="secao-titulo anim anim-2">Camiseta Essential</h2>
+  <p class="secao-sub anim anim-3">Um único modelo, três cores icônicas. Feita para quem não abre mão de qualidade.</p>
 </div>
 
 <div class="produto-wrap">
@@ -117,26 +156,43 @@
     <button class="btn-comprar" onclick="comprar()">Comprar Agora</button>
     <button class="btn-carrinho" onclick="adicionarCarrinho()">+ Adicionar ao Carrinho</button>
     <div class="selos">
-      <div class="selo">✦ Frete grátis acima de R$199</div>
-      <div class="selo">✦ Troca em 30 dias</div>
-      <div class="selo">✦ Entrega Brasil</div>
+      <div class="selo">Frete grátis acima de R$199</div>
+      <div class="selo">Troca em 30 dias</div>
+      <div class="selo">Entrega para todo o Brasil</div>
     </div>
   </div>
 </div>
 
-<!-- ══ BANNER 3 FOTOS ══ -->
-<div class="banner-fotos">
-  <div class="banner-foto"><img src="/public/images/banner-1.png" alt="VEXIS"/></div>
-  <div class="banner-foto"><img src="/public/images/banner-2.png" alt="VEXIS"/></div>
-  <div class="banner-foto"><img src="/public/images/banner-3.png" alt="VEXIS"/></div>
+<!-- ══ LIFESTYLE BAR ══ -->
+<div class="lifestyle-bar">
+  <span class="lifestyle-kicker anim">Filosofia VEXIS</span>
+  <h2 class="lifestyle-titulo anim anim-2">Minimalismo que<br>se move <em>com você.</em></h2>
+  <p class="lifestyle-sub anim anim-3">Peças pensadas para o dia a dia. Do trabalho ao fim de semana, sem esforço.</p>
+</div>
+
+<!-- ══ BANNER EDITORIAL ══ -->
+<div class="banner-editorial">
+  <div class="banner-editorial-esq">
+    <img src="/public/images/banner-1.png" alt="VEXIS Essential"/>
+  </div>
+  <div class="banner-foto-divider"></div>
+  <div class="banner-editorial-dir">
+    <div class="banner-editorial-dir-foto">
+      <img src="/public/images/banner-2.png" alt="VEXIS Polo"/>
+    </div>
+    <div class="banner-row-divider"></div>
+    <div class="banner-editorial-dir-foto">
+      <img src="/public/images/banner-3.png" alt="VEXIS Lifestyle"/>
+    </div>
+  </div>
 </div>
 
 <!-- ══ POLO COLLECTION ══ -->
 <section class="polo-section" id="polo">
   <div class="secao-header">
-    <div class="secao-kicker">Nova Coleção</div>
-    <h2 class="secao-titulo">Linha Gola Polo</h2>
-    <p class="secao-sub">Sofisticação e conforto em cada costura. Algodão pima, gola polo clássica, disponível em múltiplas cores.</p>
+    <div class="secao-kicker anim">Nova Coleção</div>
+    <h2 class="secao-titulo anim anim-2">Linha Gola Polo</h2>
+    <p class="secao-sub anim anim-3">Sofisticação e conforto em cada costura. Algodão pima, gola polo clássica, disponível em múltiplas cores.</p>
   </div>
 
   <div class="polo-grid">
@@ -293,8 +349,8 @@
       <button class="btn-dry-add" onclick="adicionarDryCarrinho()">+ Adicionar ao Carrinho</button>
 
       <div class="df-selos">
-        <span>✦ Frete grátis acima de R$199</span>
-        <span>✦ Troca em 30 dias</span>
+        <span>— Frete grátis acima de R$199</span>
+        <span>— Troca em 30 dias</span>
       </div>
     </div>
 
@@ -303,31 +359,34 @@
 
 <!-- ══ QUALIDADE ══ -->
 <div class="banner-dobradas" id="sobre">
-  <div class="dobradas-img">
+  <div class="dobradas-img anim">
     <img src="/public/images/qualidade.png" alt="Qualidade VEXIS"/>
   </div>
-  <div class="dobradas-texto">
+  <div class="dobradas-texto anim anim-2">
     <div class="kicker">Nossa Essência</div>
     <h2>Qualidade que<br>você vê e sente.</h2>
     <p>Cada peça VEXIS é desenvolvida com atenção obsessiva ao detalhe — do tecido à etiqueta. Porque acreditamos que o básico pode ser extraordinário.</p>
-    <button class="btn-comprar" style="max-width:260px" onclick="document.getElementById('produto').scrollIntoView({behavior:'smooth'})">Ver Coleção Completa</button>
+    <button class="btn-comprar" style="max-width:280px" onclick="document.getElementById('produto').scrollIntoView({behavior:'smooth'})">Ver Coleção Completa</button>
   </div>
 </div>
 
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-inner">
-    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="36" viewBox="0 0 2294.43 1099.3" style="fill-rule:evenodd;clip-rule:evenodd">
-      <defs><style>.fl0{fill:#FEFEFE;fill-rule:nonzero}.fl1{fill:#9D9181;fill-rule:nonzero}</style></defs>
-      <g>
-        <polygon class="fl0" points="205.54,745.99 -0,277.32 82.35,277.32 268.48,705.15 221.61,705.15 409.75,277.32 485.41,277.32 280.53,745.99"/>
-        <path class="fl0" d="M620.17 745.99l-0.67 -468.67 335.43 0 0.67 65.61 -260.45 0 0 337.44 269.15 0 0.67 65.61 -344.81 0zm68.96 -206.22l0 -64.27 237.01 0.67 0.67 64.27 -237.68 -0.67z"/>
-        <polygon class="fl0" points="1678.94,745.99 1678.94,277.32 1754.6,277.32 1754.6,745.99"/>
-        <path class="fl0" d="M2108.97 752.02c-36.15,0 -70.75,-5.36 -103.78,-16.07 -33.03,-10.71 -59.14,-24.55 -78.33,-41.51l27.45 -59.59c18.3,15.18 41.29,27.79 68.96,37.83 27.68,10.04 56.24,15.06 85.7,15.06 25.89,0 46.87,-2.9 62.94,-8.7 16.07,-5.8 27.9,-13.84 35.48,-24.1 7.59,-10.27 11.38,-21.65 11.38,-34.15 0,-15.18 -5.13,-27.34 -15.4,-36.49 -10.27,-9.15 -23.66,-16.51 -40.17,-22.09 -16.51,-5.58 -34.82,-10.6 -54.9,-15.06 -20.08,-4.46 -40.17,-9.71 -60.26,-15.73 -20.09,-6.03 -38.39,-13.84 -54.9,-23.43 -16.51,-9.6 -29.91,-22.32 -40.17,-38.16 -10.27,-15.85 -15.4,-36.27 -15.4,-61.26 0,-25 6.58,-47.87 19.75,-68.63 13.17,-20.75 33.36,-37.38 60.59,-49.88 27.23,-12.5 61.82,-18.75 103.78,-18.75 27.67,0 55.13,3.57 82.35,10.71 27.23,7.14 50.88,17.41 70.97,30.8l-24.77 60.26c-20.53,-12.94 -41.96,-22.43 -64.27,-28.46 -22.32,-6.03 -43.96,-9.04 -64.94,-9.04 -25,0 -45.64,3.12 -61.93,9.37 -16.29,6.25 -28.12,14.62 -35.49,25.11 -7.36,10.49 -11.05,22.21 -11.05,35.15 0,15.17 5.13,27.34 15.4,36.49 10.27,9.15 23.66,16.4 40.17,21.76 16.51,5.36 34.82,10.38 54.9,15.07 20.08,4.69 40.17,9.93 60.26,15.73 20.08,5.8 38.5,13.39 55.24,22.77 16.74,9.37 30.24,21.98 40.51,37.83 10.27,15.85 15.4,36.04 15.4,60.59 0,24.55 -6.7,47.2 -20.09,67.96 -13.39,20.76 -33.81,37.38 -61.26,49.88 -27.45,12.5 -62.16,18.75 -104.11,18.75z"/>
-        <path class="fl0" d="M1349.04 489.72l186.61 256.55 -92.95 0 -124.2 -171.92c-92.8,116.24 -195.33,240.45 -307.73,370.99l338.27 -455.62z"/>
-        <path class="fl1" d="M1669.04 0l-391.93 520.47 -174.79 -242.94 91.52 0 113.42 155.98c138.53,-175.31 262.26,-319.17 361.77,-433.51z"/>
-      </g>
-    </svg>
+    <div class="footer-brand">
+      <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" height="32" viewBox="0 0 2294.43 1099.3" style="fill-rule:evenodd;clip-rule:evenodd">
+        <defs><style>.fl0{fill:#FEFEFE;fill-rule:nonzero}.fl1{fill:#9D9181;fill-rule:nonzero}</style></defs>
+        <g>
+          <polygon class="fl0" points="205.54,745.99 -0,277.32 82.35,277.32 268.48,705.15 221.61,705.15 409.75,277.32 485.41,277.32 280.53,745.99"/>
+          <path class="fl0" d="M620.17 745.99l-0.67 -468.67 335.43 0 0.67 65.61 -260.45 0 0 337.44 269.15 0 0.67 65.61 -344.81 0zm68.96 -206.22l0 -64.27 237.01 0.67 0.67 64.27 -237.68 -0.67z"/>
+          <polygon class="fl0" points="1678.94,745.99 1678.94,277.32 1754.6,277.32 1754.6,745.99"/>
+          <path class="fl0" d="M2108.97 752.02c-36.15,0 -70.75,-5.36 -103.78,-16.07 -33.03,-10.71 -59.14,-24.55 -78.33,-41.51l27.45 -59.59c18.3,15.18 41.29,27.79 68.96,37.83 27.68,10.04 56.24,15.06 85.7,15.06 25.89,0 46.87,-2.9 62.94,-8.7 16.07,-5.8 27.9,-13.84 35.48,-24.1 7.59,-10.27 11.38,-21.65 11.38,-34.15 0,-15.18 -5.13,-27.34 -15.4,-36.49 -10.27,-9.15 -23.66,-16.51 -40.17,-22.09 -16.51,-5.58 -34.82,-10.6 -54.9,-15.06 -20.08,-4.46 -40.17,-9.71 -60.26,-15.73 -20.09,-6.03 -38.39,-13.84 -54.9,-23.43 -16.51,-9.6 -29.91,-22.32 -40.17,-38.16 -10.27,-15.85 -15.4,-36.27 -15.4,-61.26 0,-25 6.58,-47.87 19.75,-68.63 13.17,-20.75 33.36,-37.38 60.59,-49.88 27.23,-12.5 61.82,-18.75 103.78,-18.75 27.67,0 55.13,3.57 82.35,10.71 27.23,7.14 50.88,17.41 70.97,30.8l-24.77 60.26c-20.53,-12.94 -41.96,-22.43 -64.27,-28.46 -22.32,-6.03 -43.96,-9.04 -64.94,-9.04 -25,0 -45.64,3.12 -61.93,9.37 -16.29,6.25 -28.12,14.62 -35.49,25.11 -7.36,10.49 -11.05,22.21 -11.05,35.15 0,15.17 5.13,27.34 15.4,36.49 10.27,9.15 23.66,16.4 40.17,21.76 16.51,5.36 34.82,10.38 54.9,15.07 20.08,4.69 40.17,9.93 60.26,15.73 20.08,5.8 38.5,13.39 55.24,22.77 16.74,9.37 30.24,21.98 40.51,37.83 10.27,15.85 15.4,36.04 15.4,60.59 0,24.55 -6.7,47.2 -20.09,67.96 -13.39,20.76 -33.81,37.38 -61.26,49.88 -27.45,12.5 -62.16,18.75 -104.11,18.75z"/>
+          <path class="fl0" d="M1349.04 489.72l186.61 256.55 -92.95 0 -124.2 -171.92c-92.8,116.24 -195.33,240.45 -307.73,370.99l338.27 -455.62z"/>
+          <path class="fl1" d="M1669.04 0l-391.93 520.47 -174.79 -242.94 91.52 0 113.42 155.98c138.53,-175.31 262.26,-319.17 361.77,-433.51z"/>
+        </g>
+      </svg>
+      <p class="footer-brand-tagline">Unissex & Essential<br>Minimalismo para durar.</p>
+    </div>
     <div class="footer-links">
       <div class="footer-col">
         <h4>Produtos</h4>
