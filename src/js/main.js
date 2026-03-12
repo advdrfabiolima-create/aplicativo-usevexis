@@ -240,13 +240,17 @@ function trocarCorPolo(cardId, src, nome, el) {
   el.classList.add('ativo');
   card.querySelector('.polo-cor-ativa').textContent = nome;
 
-  img.classList.remove('entrando');
-  img.classList.add('saindo');
+  // Força reflow para garantir restart da animação
+  img.style.animation = 'none';
+  img.offsetHeight;
+  img.style.animation = 'poloSai 0.2s ease forwards';
+
   setTimeout(() => {
     img.src = src;
-    img.classList.remove('saindo');
-    img.classList.add('entrando');
-    setTimeout(() => img.classList.remove('entrando'), 360);
+    img.style.animation = 'none';
+    img.offsetHeight;
+    img.style.animation = 'poloEntra 0.38s ease-out forwards';
+    setTimeout(() => { img.style.animation = ''; }, 400);
   }, 200);
 }
 
