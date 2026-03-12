@@ -297,31 +297,80 @@ footer{background:var(--dark);padding:3.5rem 5% 2.5rem}
 .confirmacao-titulo{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;margin-bottom:.6rem}
 .confirmacao-sub{color:var(--muted);font-size:.88rem;line-height:1.7}
 
+/* ── SCROLL OFFSET — nav fixa não cobre seções ── */
+#produto,#polo,#dryfits,#sobre{scroll-margin-top:110px}
+
 /* ── RESPONSIVO ── */
 @media(max-width:1024px){
   .polo-grid{grid-template-columns:repeat(2,1fr)}
   .df-col-info{padding:2.5rem 2rem}
 }
 @media(max-width:768px){
-  .produto-wrap{grid-template-columns:1fr;gap:2rem}
-  .galeria{position:static}
-  .banner-fotos{grid-template-columns:1fr 1fr}
-  .banner-fotos .banner-foto:last-child{display:none}
-  .dryfits-grid{grid-template-columns:1fr}
-  .df-col-foto{height:320px}
-  .df-col-info{padding:2rem 1.5rem}
-  .banner-dobradas{grid-template-columns:1fr}
-  .footer-inner{flex-direction:column;gap:2rem}
-  .footer-links{flex-direction:column;gap:1.5rem}
-  .nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(244,242,239,.98);backdrop-filter:blur(10px);flex-direction:column;align-items:center;gap:0;padding:1rem 0 1.5rem;border-bottom:1px solid var(--border);z-index:199}
+  /* Base */
+  body{overflow-x:hidden}
+
+  /* Nav */
+  .nav-logo img{height:48px}
+  .nav-links{display:none;position:fixed;top:56px;left:0;right:0;background:rgba(244,242,239,.98);backdrop-filter:blur(10px);flex-direction:column;align-items:center;gap:0;padding:1rem 0 1.5rem;border-bottom:1px solid var(--border);z-index:199}
   .nav-links.aberto{display:flex}
   .nav-links a{margin-left:0;padding:.75rem 2rem;font-size:.85rem;color:var(--text)!important}
   .ham-btn{display:flex}
   .btn-nav{display:none}
+
+  /* Scroll offset menor com logo menor */
+  #produto,#polo,#dryfits,#sobre{scroll-margin-top:75px}
+
+  /* Hero */
+  .hero-content{padding:0 5% 3.5rem}
+  .hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}
+  .hero p{font-size:.88rem;margin-bottom:2rem;max-width:100%}
+
+  /* Seção header */
+  .secao-header{padding:3.5rem 5% 2rem}
+
+  /* Produto */
+  .produto-wrap{grid-template-columns:1fr;gap:2rem}
+  .galeria{position:static}
+  .nome-prod{font-size:2.1rem}
+
+  /* Banner fotos */
+  .banner-fotos{grid-template-columns:1fr 1fr}
+  .banner-fotos .banner-foto:last-child{display:none}
+
+  /* Polo */
+  .polo-grid{grid-template-columns:1fr}
+  .polo-visual{height:auto;aspect-ratio:4/3}
+
+  /* Dry-fit */
+  .dryfits-grid{grid-template-columns:1fr}
+  .df-col-foto{height:300px}
+  .df-col-info{padding:2rem 1.5rem}
+  .df-titulo{font-size:clamp(1.6rem,7vw,2.2rem)}
+  .df-gen-toggle{width:100%}
+  .df-gen{flex:1;text-align:center}
+  .df-tams{gap:.4rem}
+  .df-tam{flex:1;min-width:0}
+
+  /* Sobre */
+  .banner-dobradas{grid-template-columns:1fr}
+  .dobradas-img img{max-height:260px;object-fit:cover}
+
+  /* Footer */
+  .footer-inner{flex-direction:column;gap:2rem}
+  .footer-links{flex-direction:column;gap:1.5rem}
+  .footer-bottom{flex-direction:column;gap:.4rem;text-align:center}
+
+  /* Toast */
+  .toast{white-space:normal;text-align:center;max-width:88vw;font-size:.78rem;padding:.8rem 1.2rem}
+
+  /* Carrinho */
   .wpp-float{bottom:1.2rem;right:1.2rem;width:50px;height:50px}
   .cart-drawer{width:100vw;max-width:100vw}
-  .campos-duplos{grid-template-columns:1fr}
+
+  /* Checkout */
   .checkout-modal{max-height:95vh}
-  .polo-grid{grid-template-columns:1fr}
-  .polo-visual{height:240px}
+  .checkout-body{padding:1rem}
+  .checkout-resumo{padding:.8rem .9rem}
+  .campos-duplos{grid-template-columns:1fr}
+  .pagamento-tabs .tab-btn{font-size:.62rem;padding:.65rem .3rem}
 }
