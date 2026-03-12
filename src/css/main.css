@@ -11,7 +11,7 @@ body{background:var(--bg);color:var(--text);font-family:'Jost',sans-serif}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5%;transition:background .4s,box-shadow .4s}
 nav.scrolled{background:rgba(244,242,239,.96);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--border)}
 .nav-logo img{height:68px;transition:filter .4s}
-nav.scrolled .nav-logo img{filter:brightness(0)}
+nav.scrolled .nav-logo img{filter:none}
 .nav-links{display:flex}
 .nav-links a{font-family:'Jost',sans-serif;font-weight:400;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;color:rgba(250,249,247,.85);margin-left:2.5rem;transition:color .2s}
 nav.scrolled .nav-links a{color:var(--text)}
