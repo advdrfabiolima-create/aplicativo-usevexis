@@ -400,22 +400,22 @@ function escolherCorDry(cor, el) {
   document.getElementById('dryCorLabel').textContent = cor;
 }
 function escolherGeneroDry(gen, el) {
-  document.querySelectorAll('.dry-gen').forEach(b => b.classList.remove('ativo'));
+  document.querySelectorAll('.df-gen').forEach(b => b.classList.remove('ativo'));
   el.classList.add('ativo');
   document.getElementById('dryGenLabel').textContent = gen;
 }
 function escolherTamDry(tam, el) {
-  document.querySelectorAll('.dry-tam').forEach(b => b.classList.remove('ativo'));
+  document.querySelectorAll('.df-tam').forEach(b => b.classList.remove('ativo'));
   el.classList.add('ativo');
   document.getElementById('dryTamLabel').textContent = tam;
 }
 function adicionarDryCarrinho() {
-  const cor = document.getElementById('dryCorLabel').textContent;
-  const gen = document.getElementById('dryGenLabel').textContent;
-  const tam = document.getElementById('dryTamLabel').textContent;
-  if (cor === '—') { mostrarToast('Selecione uma cor para o Dry-Fit'); return; }
-  if (gen === '—') { mostrarToast('Selecione Masculino ou Feminino'); return; }
-  if (tam === '—') { mostrarToast('Selecione um tamanho'); return; }
+  const cor = document.getElementById('dryCorLabel').textContent.trim();
+  const gen = document.getElementById('dryGenLabel').textContent.trim();
+  const tam = document.getElementById('dryTamLabel').textContent.trim();
+  if (!cor) { mostrarToast('Selecione uma cor para o Dry-Fit'); return; }
+  if (!gen) { mostrarToast('Selecione Masculino ou Feminino'); return; }
+  if (!tam) { mostrarToast('Selecione um tamanho'); return; }
   const nome = 'Dry-Fit ' + gen;
   const descCor = cor + ' · ' + gen;
   const idx = carrinho.findIndex(i => i.nome === nome && i.cor === descCor && i.tam === tam);
@@ -429,8 +429,8 @@ function comprarDry() {
   const gen = document.getElementById('dryGenLabel').textContent;
   const tam = document.getElementById('dryTamLabel').textContent;
   if (cor === '—') { mostrarToast('Selecione uma cor para o Dry-Fit'); return; }
-  if (gen === '—') { mostrarToast('Selecione Masculino ou Feminino'); return; }
-  if (tam === '—') { mostrarToast('Selecione um tamanho'); return; }
+  if (!gen) { mostrarToast('Selecione Masculino ou Feminino'); return; }
+  if (!tam) { mostrarToast('Selecione um tamanho'); return; }
   adicionarDryCarrinho();
   setTimeout(() => abrirCheckout(), 300);
 }
