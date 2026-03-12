@@ -127,16 +127,14 @@ nav.scrolled .ham-btn span{background:var(--dark)}
 .lifestyle-sub{color:rgba(250,249,247,.4);font-size:.9rem;line-height:2;letter-spacing:.5px}
 
 /* ── BANNER EDITORIAL ── */
-.banner-editorial{display:grid;grid-template-columns:1.4fr 1fr;height:580px;gap:0}
+.banner-editorial{display:grid;grid-template-columns:1.4fr 1fr;height:580px;gap:2px;background:var(--bg)}
 .banner-editorial-esq{overflow:hidden;position:relative}
 .banner-editorial-esq img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .banner-editorial-esq:hover img{transform:scale(1.04)}
-.banner-editorial-dir{display:grid;grid-template-rows:1fr 1fr;gap:0}
+.banner-editorial-dir{display:grid;grid-template-rows:1fr 1fr;gap:2px;overflow:hidden}
 .banner-editorial-dir-foto{overflow:hidden;position:relative}
 .banner-editorial-dir-foto img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .banner-editorial-dir-foto:hover img{transform:scale(1.04)}
-.banner-foto-divider{width:1px;background:var(--bg)}
-.banner-row-divider{height:1px;background:var(--bg)}
 
 /* ── POLO COLLECTION ── */
 .polo-section{padding:0 0 8rem}
