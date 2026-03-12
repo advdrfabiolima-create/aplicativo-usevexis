@@ -260,6 +260,48 @@ function adicionarPoloCarrinho(nome, preco, cardId) {
   mostrarToast('✓ ' + nome + ' adicionada ao carrinho');
 }
 
+// ── DRY-FIT ──
+function escolherCorDry(cor, el) {
+  document.querySelectorAll('.cor-tag').forEach(b => b.classList.remove('ativo'));
+  el.classList.add('ativo');
+  document.getElementById('dryCorLabel').textContent = cor;
+}
+function escolherGeneroDry(gen, el) {
+  document.querySelectorAll('.dry-gen').forEach(b => b.classList.remove('ativo'));
+  el.classList.add('ativo');
+  document.getElementById('dryGenLabel').textContent = gen;
+}
+function escolherTamDry(tam, el) {
+  document.querySelectorAll('.dry-tam').forEach(b => b.classList.remove('ativo'));
+  el.classList.add('ativo');
+  document.getElementById('dryTamLabel').textContent = tam;
+}
+function adicionarDryCarrinho() {
+  const cor = document.getElementById('dryCorLabel').textContent;
+  const gen = document.getElementById('dryGenLabel').textContent;
+  const tam = document.getElementById('dryTamLabel').textContent;
+  if (cor === '—') { mostrarToast('Selecione uma cor para o Dry-Fit'); return; }
+  if (gen === '—') { mostrarToast('Selecione Masculino ou Feminino'); return; }
+  if (tam === '—') { mostrarToast('Selecione um tamanho'); return; }
+  const nome = 'Dry-Fit ' + gen;
+  const descCor = cor + ' · ' + gen;
+  const idx = carrinho.findIndex(i => i.nome === nome && i.cor === descCor && i.tam === tam);
+  if (idx >= 0) { carrinho[idx].qtd++; }
+  else { carrinho.push({ nome, cor: descCor, tam, preco: 89.90, qtd: 1 }); }
+  atualizarCarrinho();
+  mostrarToast('✓ Dry-Fit adicionado ao carrinho');
+}
+function comprarDry() {
+  const cor = document.getElementById('dryCorLabel').textContent;
+  const gen = document.getElementById('dryGenLabel').textContent;
+  const tam = document.getElementById('dryTamLabel').textContent;
+  if (cor === '—') { mostrarToast('Selecione uma cor para o Dry-Fit'); return; }
+  if (gen === '—') { mostrarToast('Selecione Masculino ou Feminino'); return; }
+  if (tam === '—') { mostrarToast('Selecione um tamanho'); return; }
+  adicionarDryCarrinho();
+  setTimeout(() => abrirCheckout(), 300);
+}
+
 // ── ANIMAÇÕES POR SCROLL ──
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.style.animationPlayState = 'running'; });

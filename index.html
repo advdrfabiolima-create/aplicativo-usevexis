@@ -236,22 +236,74 @@
 
 <!-- ══ DRY-FIT ══ -->
 <section class="dryfits-section" id="dryfits">
+
+  <!-- Banner corrida -->
+  <div class="dryfits-banner">
+    <img src="/public/images/corrida-dryfits.png" alt="Atletas VEXIS Dry-Fit em ação"/>
+    <div class="dryfits-banner-overlay">
+      <div class="dryfits-banner-texto anim">
+        <div class="dry-kicker-light">Linha Performance</div>
+        <h2 class="dry-banner-titulo">Vá mais longe.<br><em>Suor não espera.</em></h2>
+        <p class="dry-banner-sub">Tecnologia que respira no mesmo ritmo que você.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Configurador de produto -->
   <div class="dryfits-inner">
     <div class="dryfits-texto">
-      <div class="kicker">Linha Performance</div>
+      <div class="kicker">Camiseta Dry-Fit</div>
       <h2>Dry-Fit<br><em>para todos os ritmos.</em></h2>
       <p>Tecido tecnológico de secagem ultra-rápida. Disponível em 8 cores vibrantes para treino, corrida ou uso casual de alta performance.</p>
-      <div class="cores-dryfits">
-        <div class="cor-tag" style="background:#ffffff" title="Branco"></div>
-        <div class="cor-tag" style="background:#e8141c" title="Vermelho"></div>
-        <div class="cor-tag" style="background:#f47920" title="Laranja"></div>
-        <div class="cor-tag" style="background:#f5e626" title="Amarelo"></div>
-        <div class="cor-tag" style="background:#8fc640" title="Verde Limão"></div>
-        <div class="cor-tag" style="background:#7bbce8" title="Azul Claro"></div>
-        <div class="cor-tag" style="background:#1c4e9d" title="Azul Royal"></div>
-        <div class="cor-tag" style="background:#1a1a18" title="Preto"></div>
+
+      <div class="dry-preco-bloco">
+        <div class="dry-preco-val">R$ 89,90</div>
+        <div class="dry-preco-parc">ou 3× de R$ 29,97 sem juros</div>
       </div>
-      <button class="btn-dry">Ver Linha Dry-Fit</button>
+
+      <!-- Cor -->
+      <div class="label-dry">Cor: <strong id="dryCorLabel">—</strong></div>
+      <div class="cores-dryfits">
+        <button class="cor-tag" style="background:#ffffff;border-color:rgba(255,255,255,.35)" data-cor="Branco"       title="Branco"       onclick="escolherCorDry('Branco',this)"></button>
+        <button class="cor-tag" style="background:#e8141c"                                    data-cor="Vermelho"     title="Vermelho"     onclick="escolherCorDry('Vermelho',this)"></button>
+        <button class="cor-tag" style="background:#f47920"                                    data-cor="Laranja"      title="Laranja"      onclick="escolherCorDry('Laranja',this)"></button>
+        <button class="cor-tag" style="background:#f5e626"                                    data-cor="Amarelo"      title="Amarelo"      onclick="escolherCorDry('Amarelo',this)"></button>
+        <button class="cor-tag" style="background:#8fc640"                                    data-cor="Verde Limão"  title="Verde Limão"  onclick="escolherCorDry('Verde Limão',this)"></button>
+        <button class="cor-tag" style="background:#7bbce8"                                    data-cor="Azul Claro"   title="Azul Claro"   onclick="escolherCorDry('Azul Claro',this)"></button>
+        <button class="cor-tag" style="background:#1c4e9d"                                    data-cor="Azul Royal"   title="Azul Royal"   onclick="escolherCorDry('Azul Royal',this)"></button>
+        <button class="cor-tag" style="background:#1a1a18;border-color:rgba(255,255,255,.2)"  data-cor="Preto"        title="Preto"        onclick="escolherCorDry('Preto',this)"></button>
+      </div>
+
+      <!-- Gênero -->
+      <div class="label-dry">Gênero: <strong id="dryGenLabel">—</strong></div>
+      <div class="dry-generos">
+        <button class="dry-gen" onclick="escolherGeneroDry('Masculino',this)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="14" r="6"/><path d="M20 4l-6 6M14 4h6v6"/></svg>
+          Masculino
+        </button>
+        <button class="dry-gen" onclick="escolherGeneroDry('Feminino',this)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="10" r="6"/><path d="M12 16v6M9 19h6"/></svg>
+          Feminino
+        </button>
+      </div>
+
+      <!-- Tamanho -->
+      <div class="label-dry">Tamanho: <strong id="dryTamLabel">—</strong></div>
+      <div class="dry-tams">
+        <button class="dry-tam" onclick="escolherTamDry('P',this)">P</button>
+        <button class="dry-tam" onclick="escolherTamDry('M',this)">M</button>
+        <button class="dry-tam" onclick="escolherTamDry('G',this)">G</button>
+        <button class="dry-tam" onclick="escolherTamDry('GG',this)">GG</button>
+      </div>
+
+      <button class="btn-dry-comprar" onclick="comprarDry()">Comprar Agora</button>
+      <button class="btn-dry-add" onclick="adicionarDryCarrinho()">+ Adicionar ao Carrinho</button>
+
+      <div class="dry-selos">
+        <div class="dry-selo">✦ Frete grátis acima de R$199</div>
+        <div class="dry-selo">✦ Poliéster 100% dry-fit tecnológico</div>
+        <div class="dry-selo">✦ Troca em 30 dias</div>
+      </div>
     </div>
     <div class="dryfits-img">
       <img src="/public/images/dryfits.png" alt="Dry-Fit VEXIS"/>
