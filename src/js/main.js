@@ -232,26 +232,14 @@ function comprar() {
 
 // ── POLO COLLECTION ──
 function trocarCorPolo(cardId, src, nome, el) {
-  const visual = document.getElementById(cardId);
-  const img    = visual.querySelector('.polo-img');
-  const card   = visual.closest('.polo-card');
-
+  const card = document.getElementById(cardId).closest('.polo-card');
   card.querySelectorAll('.polo-swatch').forEach(b => b.classList.remove('ativo'));
   el.classList.add('ativo');
   card.querySelector('.polo-cor-ativa').textContent = nome;
 
-  // Força reflow para garantir restart da animação
-  img.style.animation = 'none';
-  img.offsetHeight;
-  img.style.animation = 'poloSai 0.2s ease forwards';
-
-  setTimeout(() => {
-    img.src = src;
-    img.style.animation = 'none';
-    img.offsetHeight;
-    img.style.animation = 'poloEntra 0.38s ease-out forwards';
-    setTimeout(() => { img.style.animation = ''; }, 400);
-  }, 200);
+  const img = document.getElementById(cardId).querySelector('.polo-img');
+  img.style.opacity = 0;
+  setTimeout(() => { img.src = src; img.style.opacity = 1; }, 200);
 }
 
 function escolherTamPolo(el) {
