@@ -120,7 +120,7 @@ nav.scrolled .ham-btn span{background:var(--dark)}
 
 /* ── DRY-FIT ── */
 .dryfits-section{background:var(--dark);overflow:hidden}
-.dryfits-grid{display:grid;grid-template-columns:1fr 1fr 1fr;min-height:620px}
+.dryfits-grid{display:grid;grid-template-columns:1.1fr 1fr;min-height:580px}
 
 /* Coluna 1 — foto corrida */
 .df-col-foto{position:relative;overflow:hidden}
@@ -130,11 +130,7 @@ nav.scrolled .ham-btn span{background:var(--dark)}
 .df-caption-kicker{display:block;font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
 .df-caption-text{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;color:var(--white);line-height:1.2}
 
-/* Coluna 2 — produto */
-.df-col-produto{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.025);border-left:1px solid rgba(255,255,255,.06);border-right:1px solid rgba(255,255,255,.06);padding:2rem 1.5rem}
-.df-col-produto img{width:100%;max-width:260px;height:auto;display:block;object-fit:contain}
-
-/* Coluna 3 — configurador */
+/* Coluna 2 — configurador */
 .df-col-info{padding:3rem 2.2rem;display:flex;flex-direction:column;justify-content:center}
 .df-marca{font-size:.6rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
 .df-titulo{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,2.2vw,2.5rem);font-weight:300;color:var(--white);line-height:1.12;margin-bottom:.5rem}
@@ -304,8 +300,6 @@ footer{background:var(--dark);padding:3.5rem 5% 2.5rem}
 /* ── RESPONSIVO ── */
 @media(max-width:1024px){
   .polo-grid{grid-template-columns:repeat(2,1fr)}
-  .dryfits-grid{grid-template-columns:1fr 1fr}
-  .df-col-produto{display:none}
   .df-col-info{padding:2.5rem 2rem}
 }
 @media(max-width:768px){
@@ -314,8 +308,7 @@ footer{background:var(--dark);padding:3.5rem 5% 2.5rem}
   .banner-fotos{grid-template-columns:1fr 1fr}
   .banner-fotos .banner-foto:last-child{display:none}
   .dryfits-grid{grid-template-columns:1fr}
-  .df-col-foto{height:300px}
-  .df-col-produto{display:none}
+  .df-col-foto{height:320px}
   .df-col-info{padding:2rem 1.5rem}
   .banner-dobradas{grid-template-columns:1fr}
   .footer-inner{flex-direction:column;gap:2rem}
