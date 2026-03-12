@@ -1,5 +1,42 @@
 // ── ESTADO ──
 const carrinho = [];
+let freteAtual = { valor: 0, label: '', prazo: '', calculado: false };
+
+// ── TABELA DE FRETE POR ESTADO ──
+const ZONAS_FRETE = {
+  // Sul
+  PR: { valor: 12.90, zona: 'Sul',          prazo: '3–5 dias úteis' },
+  SC: { valor: 12.90, zona: 'Sul',          prazo: '3–5 dias úteis' },
+  RS: { valor: 12.90, zona: 'Sul',          prazo: '3–5 dias úteis' },
+  // Sudeste
+  SP: { valor: 12.90, zona: 'Sudeste',      prazo: '2–4 dias úteis' },
+  RJ: { valor: 12.90, zona: 'Sudeste',      prazo: '2–4 dias úteis' },
+  MG: { valor: 14.90, zona: 'Sudeste',      prazo: '3–5 dias úteis' },
+  ES: { valor: 14.90, zona: 'Sudeste',      prazo: '3–5 dias úteis' },
+  // Centro-Oeste
+  DF: { valor: 18.90, zona: 'Centro-Oeste', prazo: '4–7 dias úteis' },
+  GO: { valor: 18.90, zona: 'Centro-Oeste', prazo: '5–8 dias úteis' },
+  MT: { valor: 18.90, zona: 'Centro-Oeste', prazo: '6–9 dias úteis' },
+  MS: { valor: 18.90, zona: 'Centro-Oeste', prazo: '5–8 dias úteis' },
+  // Nordeste
+  BA: { valor: 18.90, zona: 'Nordeste',     prazo: '6–9 dias úteis' },
+  SE: { valor: 18.90, zona: 'Nordeste',     prazo: '6–9 dias úteis' },
+  AL: { valor: 21.90, zona: 'Nordeste',     prazo: '7–10 dias úteis' },
+  PE: { valor: 21.90, zona: 'Nordeste',     prazo: '7–10 dias úteis' },
+  PB: { valor: 21.90, zona: 'Nordeste',     prazo: '7–10 dias úteis' },
+  RN: { valor: 21.90, zona: 'Nordeste',     prazo: '7–10 dias úteis' },
+  CE: { valor: 21.90, zona: 'Nordeste',     prazo: '7–10 dias úteis' },
+  PI: { valor: 24.90, zona: 'Nordeste',     prazo: '8–11 dias úteis' },
+  MA: { valor: 24.90, zona: 'Nordeste',     prazo: '8–11 dias úteis' },
+  // Norte
+  TO: { valor: 21.90, zona: 'Norte',        prazo: '9–12 dias úteis' },
+  PA: { valor: 24.90, zona: 'Norte',        prazo: '10–14 dias úteis' },
+  AM: { valor: 24.90, zona: 'Norte',        prazo: '10–14 dias úteis' },
+  RO: { valor: 24.90, zona: 'Norte',        prazo: '10–14 dias úteis' },
+  AC: { valor: 27.90, zona: 'Norte',        prazo: '12–16 dias úteis' },
+  RR: { valor: 27.90, zona: 'Norte',        prazo: '12–16 dias úteis' },
+  AP: { valor: 27.90, zona: 'Norte',        prazo: '12–16 dias úteis' },
+};
 
 // ── NAV SCROLL ──
 window.addEventListener('scroll', () => {
@@ -111,6 +148,14 @@ function escolherTam(t, el) {
 
 // ── CHECKOUT ──
 function popularResumo() {
+  // Reseta frete
+  freteAtual = { valor: 0, label: '', prazo: '', calculado: false };
+  document.getElementById('cepInput').value = '';
+  document.getElementById('freteResultado').classList.remove('visivel');
+  document.getElementById('freteLinha').classList.remove('visivel');
+  document.getElementById('btnCalcularFrete').textContent = 'Calcular';
+  document.getElementById('btnCalcularFrete').disabled = false;
+
   const total = carrinho.reduce((s, i) => s + i.preco * i.qtd, 0);
   const fmt   = 'R$ ' + total.toFixed(2).replace('.', ',');
   document.getElementById('checkoutTotalBadge').textContent = fmt;
@@ -132,6 +177,90 @@ function popularResumo() {
     o.textContent = i + 'x de R$ ' + v + (i === 1 ? ' (à vista)' : ' sem juros');
     sel.appendChild(o);
   }
+}
+
+// ── FRETE ──
+function formatarCep(input) {
+  let v = input.value.replace(/\D/g, '').substring(0, 8);
+  if (v.length > 5) v = v.substring(0, 5) + '-' + v.substring(5);
+  input.value = v;
+}
+
+async function calcularFrete() {
+  const cepRaw = document.getElementById('cepInput').value.replace(/\D/g, '');
+  if (cepRaw.length !== 8) { mostrarToast('Digite um CEP válido com 8 dígitos'); return; }
+
+  const btn = document.getElementById('btnCalcularFrete');
+  btn.textContent = 'Buscando…';
+  btn.disabled = true;
+
+  try {
+    const res  = await fetch('https://viacep.com.br/ws/' + cepRaw + '/json/');
+    const data = await res.json();
+
+    if (data.erro) {
+      mostrarToast('CEP não encontrado. Verifique e tente novamente.');
+      btn.textContent = 'Calcular';
+      btn.disabled = false;
+      return;
+    }
+
+    const uf             = data.uf;
+    const totalProdutos  = carrinho.reduce((s, i) => s + i.preco * i.qtd, 0);
+    const freteGratis    = totalProdutos >= 199;
+    const info           = ZONAS_FRETE[uf];
+
+    if (!info && !freteGratis) {
+      mostrarToast('Estado não mapeado. Entre em contato para consultar o frete.');
+      btn.textContent = 'Recalcular';
+      btn.disabled = false;
+      return;
+    }
+
+    if (freteGratis) {
+      freteAtual = { valor: 0, label: 'Frete Grátis', prazo: (info ? info.prazo : '5–14 dias úteis'), calculado: true };
+    } else {
+      freteAtual = { valor: info.valor, label: info.zona, prazo: info.prazo, calculado: true };
+    }
+
+    // Atualiza resultado visual
+    const localidade = data.localidade + ' — ' + uf + ' (' + (freteGratis ? 'Frete Grátis 🎉' : freteAtual.label) + ')';
+    const valorDisplay = freteGratis ? 'Grátis' : 'R$ ' + freteAtual.valor.toFixed(2).replace('.', ',');
+
+    document.getElementById('freteLocalidade').textContent = localidade;
+    const valEl = document.getElementById('freteValorDisplay');
+    valEl.textContent = valorDisplay;
+    valEl.className   = 'frete-resultado-val' + (freteGratis ? ' gratis' : '');
+    document.getElementById('fretePrazo').textContent = '✦ Prazo estimado: ' + freteAtual.prazo;
+    document.getElementById('freteResultado').classList.add('visivel');
+
+    // Linha de frete no resumo
+    document.getElementById('checkoutFreteValor').textContent = valorDisplay;
+    document.getElementById('freteLinha').classList.add('visivel');
+
+    // Total atualizado
+    const totalFinal = totalProdutos + freteAtual.valor;
+    const fmtTotal   = 'R$ ' + totalFinal.toFixed(2).replace('.', ',');
+    document.getElementById('checkoutResumoTotal').textContent = fmtTotal;
+    document.getElementById('checkoutTotalBadge').textContent  = fmtTotal;
+
+    // Atualiza parcelas com frete incluso
+    const sel = document.getElementById('ccParcelas');
+    sel.innerHTML = '';
+    for (let i = 1; i <= 3; i++) {
+      const v = (totalFinal / i).toFixed(2).replace('.', ',');
+      const o = document.createElement('option');
+      o.value = i;
+      o.textContent = i + 'x de R$ ' + v + (i === 1 ? ' (à vista)' : ' sem juros');
+      sel.appendChild(o);
+    }
+
+  } catch (err) {
+    mostrarToast('Erro ao buscar CEP. Verifique sua conexão.');
+  }
+
+  btn.textContent = 'Recalcular';
+  btn.disabled = false;
 }
 function abrirCheckout() {
   if (!carrinho.length) { mostrarToast('Adicione produtos ao carrinho primeiro'); return; }
@@ -182,9 +311,13 @@ function copiarPix() {
   }).catch(() => mostrarToast('Chave: ' + chave));
 }
 function confirmarPagamentoPix() {
-  const total = carrinho.reduce((s, i) => s + i.preco * i.qtd, 0);
-  const itens = carrinho.map(i => i.nome + ' ' + i.cor + ' · Tam ' + i.tam + ' (x' + i.qtd + ')').join('\n');
-  const msg = encodeURIComponent('Olá! Realizei o pagamento via PIX e gostaria de confirmar meu pedido:\n' + itens + '\nTotal: R$ ' + total.toFixed(2).replace('.', ',') + '\n\n[Anexe o comprovante PIX aqui]');
+  const subtotal   = carrinho.reduce((s, i) => s + i.preco * i.qtd, 0);
+  const totalFinal = subtotal + freteAtual.valor;
+  const itens      = carrinho.map(i => i.nome + ' ' + i.cor + ' · Tam ' + i.tam + ' (x' + i.qtd + ')').join('\n');
+  const freteInfo  = freteAtual.calculado
+    ? '\nFrete: ' + (freteAtual.valor === 0 ? 'Grátis' : 'R$ ' + freteAtual.valor.toFixed(2).replace('.', ','))
+    : '';
+  const msg = encodeURIComponent('Olá! Realizei o pagamento via PIX e gostaria de confirmar meu pedido:\n' + itens + freteInfo + '\nTotal: R$ ' + totalFinal.toFixed(2).replace('.', ',') + '\n\n[Anexe o comprovante PIX aqui]');
   window.open('https://wa.me/5500000000000?text=' + msg, '_blank');
   exibirConfirmacao('Pedido enviado! Encaminhe o comprovante PIX pelo WhatsApp que acabou de abrir para confirmar sua entrega.');
 }

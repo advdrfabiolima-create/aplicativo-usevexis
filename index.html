@@ -408,6 +408,32 @@
       <div class="checkout-resumo">
         <div class="checkout-resumo-titulo">Resumo do Pedido</div>
         <div id="checkoutResumoItens"></div>
+
+        <!-- Calculadora de Frete -->
+        <div class="frete-bloco">
+          <div class="frete-bloco-titulo">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            Calcular Frete
+          </div>
+          <div class="frete-cep-row">
+            <input type="text" id="cepInput" placeholder="00000-000" maxlength="9"
+              oninput="formatarCep(this)" onkeydown="if(event.key==='Enter')calcularFrete()"
+              class="frete-cep-input"/>
+            <button class="btn-calcular-frete" id="btnCalcularFrete" onclick="calcularFrete()">Calcular</button>
+          </div>
+          <div class="frete-resultado" id="freteResultado">
+            <div class="frete-resultado-info">
+              <span id="freteLocalidade">—</span>
+              <span class="frete-resultado-val" id="freteValorDisplay">—</span>
+            </div>
+            <div class="frete-prazo" id="fretePrazo"></div>
+          </div>
+        </div>
+
+        <div class="checkout-item-linha frete-linha" id="freteLinha">
+          <span>Frete</span>
+          <strong id="checkoutFreteValor">—</strong>
+        </div>
         <div class="checkout-item-linha total">
           <span>Total</span>
           <strong id="checkoutResumoTotal">R$ 0,00</strong>
